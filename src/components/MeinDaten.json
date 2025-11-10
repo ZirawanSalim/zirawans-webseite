@@ -1,0 +1,50 @@
+{
+    "name": "Zirawan Salim",
+    "email": "Zirawan@hotmail.com",
+    "beschreibung": "Als angehender Junior Webentwickler mit Schwerpunkt auf Produktdesign und Webentwicklung gestalte ich benutzerfreundliche und funktionale digitale Erlebnisse. Während meiner Weiterbildung habe ich gelernt, Webprodukte von der Idee über das Design bis hin zum Prototypen umzusetzen. Ich beherrsche die Grundlagen der Programmierung, den Umgang mit Frontend-Frameworks und nutze KI-Tools gezielt als Coding-Assistenz. Vor meiner Weiterbildung war ich als Sprachmittler in einer Immobilienfirma tätig – eine Erfahrung, die meine Kommunikationsstärke, Organisation und Teamfähigkeit geprägt hat. Zuverlässigkeit, Empathie und Einsatzbereitschaft zeichnen mich aus, und ich freue mich darauf, meine Fähigkeiten in zukünftige Projekte einzubringen.",
+    "skills": {
+        "design_tools": [
+            "Figma",
+            "FigJam",
+            "Cursor",
+            "Framer"
+        ],
+        "design_faehigkeiten": [
+            "Design-Systeme zur Gestaltung konsistenter Interfaces",
+            "Konkurrenzanalysen zur Ermittlung von Marktpositionen und Trends",
+            "User Flows zur Visualisierung von Nutzungspfaden",
+            "Site Maps zur Planung komplexer Websites und Webapps",
+            "Low-, Mid- und High-Fidelity-Wireframes",
+            "Interaktive Prototypen zur Testbarkeit von Ideen"
+        ],
+        "programmiersprachen": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "frameworks_und_tools": [
+            "Bootstrap",
+            "Tailwind CSS",
+            "React"
+        ],
+        "entwicklungsumgebungen": [
+            "VS Code",
+            "Cursor",
+            "Framer",
+            "Figma",
+            "GitHub"
+        ]
+    },
+    "projekte": [
+        {
+            "titel": "Armband Onlineshop",
+            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit React und Tailwind CSS umgesetzt.",
+            "technologien": [
+                "React",
+                "Tailwind CSS",
+                "Figma"
+            ],
+            "portfolio_link": "Portfolio in Framer erstellt"
+        }
+    ]
+}
