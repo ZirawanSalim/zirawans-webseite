@@ -1,17 +1,13 @@
 
-import './App.css'
-import AboutMe from './components/AboutMe.jsx';
-import NavBar from './components/NavBar.jsx';   
-function App() {
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
 
 
+export default function App() {
   return (
-    <>
-     <NavBar />
-     <AboutMe />
-
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+     
+    </Routes>
   )
 }
-
-export default App
