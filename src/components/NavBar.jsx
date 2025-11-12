@@ -8,7 +8,7 @@ export default function NavBar() {
             <div className="flex justify-between items-center md:h-12">
                 <div className="text-white font-bold text-xl">Zirawan Salim</div>
                 <div className="hidden md:flex space-x-6">
-                   <Link to="/Home" >
+                   <Link to="/" >
                         <div className="text-white text-lg hover:text-gray-300">
                             Home
                         </div>
@@ -32,7 +32,7 @@ export default function NavBar() {
             </div>
             {isOpen && (
                 <div className="md:hidden bg-blue-500 mt-3 rounded-lg text-center p-2" onClick={() => setIsOpen(false)}>
-                    <Link to="/Home" >
+                    <Link to="/" >
                         <div className="border-t border-blue-400 my-2">
                             Home
                         </div>

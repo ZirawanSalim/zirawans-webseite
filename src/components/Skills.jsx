@@ -60,7 +60,6 @@ export default function Skills() {
                 <i className="devicon-tailwindcss-plain colored"></i>
                 <i className="devicon-vscode-plain colored"></i>
                 <i className="devicon-git-plain colored"></i>
-                <i className="devicon-github-original"></i>
             </div>
             <h2 className="text-2xl font-semibold mt-8 mb-2">Weitere Kenntnisse</h2>
             <ul className="list-disc list-inside mb-6">
