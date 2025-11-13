@@ -38,13 +38,19 @@
     "projekte": [
         {
             "titel": "Armband Onlineshop",
-            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit React und Tailwind CSS umgesetzt.",
+            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit HTML,Bootstrap und java script umgesetzt.",
             "technologien": [
-                "React",
-                "Tailwind CSS",
-                "Figma"
+                "HTML",
+                "Bootstrap",
+                "JavaScript",
+                "Cursor"
             ],
-            "portfolio_link": "Portfolio in Framer erstellt"
+            "portfolio_URL": "https://zirawan.framer.website/?editSite"
         }
+    ],
+    "hobbies": [
+        "Armband knüpfen",
+        "Fußball",
+        "Musik"
     ]
 }

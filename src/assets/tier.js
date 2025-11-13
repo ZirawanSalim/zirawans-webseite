@@ -16,5 +16,7 @@ console.log(tiere);
     return `${gerundet} $`;
 
    }
+   console.log(preis.map(rundPreis));
 
-console.log(preis.map(rundPreis));
+   const preisRundTier = preis.map((tier, index) => `${tier} kostet ${rundPreis(preis[index]) }`);
+console.log(preisRundTier);

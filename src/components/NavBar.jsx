@@ -5,7 +5,7 @@ export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <nav className="bg-blue-600 p-4">
-            <div className="flex justify-between items-center md:h-12">
+            <div className="flex justify-between items-center md:h-12 ml-45 mr-45">
                 <div className="text-white font-bold text-xl">Zirawan Salim</div>
                 <div className="hidden md:flex space-x-6">
                    <Link to="/" >

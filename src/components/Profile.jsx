@@ -2,6 +2,7 @@ import ProfileImage from "./ProfileImage";
 import Selbstbeschreibung from "./Selbstbeschreibung";
 import Skills from "./Skills";
 import TitlrText from "./TitlrText";
+import HobbiesListe from '../components/HobbiesListe.jsx'; 
 
 export default function Profile() {
     return (
@@ -14,6 +15,7 @@ export default function Profile() {
                 <ProfileImage />
             </div>
             <Skills />
+            <HobbiesListe />
 
         </div>
 
