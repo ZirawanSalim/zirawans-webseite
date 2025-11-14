@@ -1,8 +1,8 @@
 
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import Contact from './pages/Contact.jsx';
-import Projekte from './pages/Projekte.jsx';
+import Home from './Pages/Home.jsx';
+import Contact from './Pages/Contact.jsx';
+import Projekte from './Pages/Projekte.jsx';
 
 
 export default function App() {
