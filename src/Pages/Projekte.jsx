@@ -8,8 +8,7 @@ export default function ProjektePage() {
         <div>
             <NavBar />
             <MeinProjekte />
-            {/* <h3>Projekte Page</h3>
-            <Link to="/">home</Link> */}
+            
 
         </div>
     )
