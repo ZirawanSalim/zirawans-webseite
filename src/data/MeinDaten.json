@@ -38,7 +38,7 @@
     "projekte": [
         {
             "titel": "Armband Onlineshop",
-            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit HTML,Bootstrap und java script umgesetzt.",
+            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit HTML,CSS, Bootstrap und java script umgesetzt.",
             "technologien": [
                 "HTML",
                 "Bootstrap",
