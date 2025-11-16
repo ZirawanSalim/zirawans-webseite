@@ -38,14 +38,53 @@
     "projekte": [
         {
             "titel": "Armband Onlineshop",
-            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit HTML,CSS, Bootstrap und java script umgesetzt.",
+            "beschreibung": "Design und Umsetzung eines Online-Shops für Armbänder. Das Projekt wurde in Figma konzipiert und anschließend mit HTML, CSS, Bootstrap und JavaScript umgesetzt.",
             "technologien": [
                 "HTML",
+                "CSS",
                 "Bootstrap",
                 "JavaScript",
-                "Cursor"
+                "Figma"
             ],
-            "portfolio_URL": "https://zirawan.framer.website/?editSite"
+            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "bild": "/src/assets/armband7.jpg"
+        },
+        {
+            "titel": "Framer Portfolio",
+            "beschreibung": "Erstellung eines interaktiven Portfolios mit Framer. Modernes Design mit Animationen und responsiver Darstellung für verschiedene Geräte.",
+            "technologien": [
+                "Framer",
+                "Web Design",
+                "UI/UX Design"
+            ],
+            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "bild": "/src/assets/framer.png"
+        },
+        {
+            "titel": "Design in Armband Onlineshop aus Figma",
+            "beschreibung": "Vollständiges UI/UX Design für einen Armband Onlineshop in Figma. Von der Konzeption über Wireframes bis hin zum High-Fidelity Design mit Design-System und interaktiven Prototypen.",
+            "technologien": [
+                "Figma",
+                "UI/UX Design",
+                "Design System",
+                "Wireframing",
+                "Prototyping"
+            ],
+            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "bild": "/src/assets/armband7.jpg"
+        },
+        {
+            "titel": "Web Grundlagen Abschlussprojekt",
+            "beschreibung": "Abschlussprojekt des Web Grundlagen Kurses. Umsetzung einer vollständigen Website mit HTML, CSS, Bootstrap und JavaScript. Das Projekt demonstriert die Anwendung der grundlegenden Webtechnologien in einem praktischen Kontext.",
+            "technologien": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "GitHub"
+            ],
+            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "bild": "/src/assets/armband7.jpg"
         }
     ],
     "hobbies": [
