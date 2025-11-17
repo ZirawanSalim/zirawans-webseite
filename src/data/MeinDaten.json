@@ -47,7 +47,10 @@
                 "Figma"
             ],
             "portfolio_URL": "https://zirawan.framer.website/?editSite",
-            "bild": "/src/assets/armband7.jpg"
+            "bild": "/src/assets/armband7.jpg",
+            "bild1": "/src/assets/armband1.jpg",
+            "bild2": "/src/assets/armband2.jpg",
+            "bild3": "/src/assets/armband3.jpg"
         },
         {
             "titel": "Framer Portfolio",
@@ -91,5 +94,11 @@
         "Armband knüpfen",
         "Fußball",
         "Musik"
+    ],
+    "armband_bilder": [
+        "/src/assets/armband7.jpg",
+        "/src/assets/armband1.jpg",
+        "/src/assets/armband2.jpg",
+        "/src/assets/armband3.jpg"
     ]
 }

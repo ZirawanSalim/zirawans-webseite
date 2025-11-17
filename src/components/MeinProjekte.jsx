@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import MeinDaten from '../data/MeinDaten.json' with { type: 'json' };
 import armband7 from '../assets/armband7.jpg';
+import armband1 from '../assets/armband1.jpg';
+import armband2 from '../assets/armband2.jpg';
 import framer from '../assets/framer.png';
 
 export default function MeinProjekte() {
+
+    const [search, setSearch] = useState("");
+
     const getBild = (bildPfad) => {
         if (bildPfad.includes('armband7.jpg')) return armband7;
+        if (bildPfad.includes('armband1.jpg')) return armband1;
+        if (bildPfad.includes('armband2.jpg')) return armband2;
         if (bildPfad.includes('framer.png')) return framer;
-        return armband7; // Default fallback
+        return armband7; 
     };
 
     const getObjectFit = (bildPfad) => {
@@ -16,12 +24,28 @@ export default function MeinProjekte() {
         return 'object-cover'; 
     };
 
+    // 🔍 Filter-Funktion
+    const gefilterteProjekte = MeinDaten.projekte.filter((projekt) =>
+        projekt.titel.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
         <div className='m-4 p-4'>
             <h2 className="text-3xl font-bold text-blue-400 mb-8 ml-40">Meine Projekte</h2>
 
+            {/* 🔍 Suchfeld */}
+            <div className="ml-40 mb-6">
+                <input
+                    type="text"
+                    placeholder="Projekte durchsuchen..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="p-2 rounded bg-gray-700 text-white w-80 border border-gray-600"
+                />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-full">
-                {MeinDaten.projekte.map((projekt, index) => {
+                {gefilterteProjekte.map((projekt, index) => {
                     return (
                         <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700">
                             <div className={`relative h-48 w-full overflow-hidden bg-gray-900 ${getObjectFit(projekt.bild) === 'object-contain' ? 'flex items-center justify-center' : ''}`}>
