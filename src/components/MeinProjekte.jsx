@@ -24,7 +24,7 @@ export default function MeinProjekte() {
         return 'object-cover'; 
     };
 
-    // 🔍 Filter-Funktion
+   
     const gefilterteProjekte = MeinDaten.projekte.filter((projekt) =>
         projekt.titel.toLowerCase().includes(search.toLowerCase())
     );
@@ -33,13 +33,10 @@ export default function MeinProjekte() {
         <div className='m-4 p-4'>
             <h2 className="text-3xl font-bold text-blue-400 mb-8 ml-40">Meine Projekte</h2>
 
-            {/* 🔍 Suchfeld */}
+           
             <div className="ml-40 mb-6">
-                <input
-                    type="text"
-                    placeholder="Projekte durchsuchen..."
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                <input type="text" placeholder="Projekte durchsuchen..."
+                 value={search}onChange={(e) => setSearch(e.target.value)}
                     className="p-2 rounded bg-gray-700 text-white w-80 border border-gray-600"
                 />
             </div>

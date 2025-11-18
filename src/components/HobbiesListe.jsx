@@ -1,23 +1,30 @@
-import MeinDaten from '../data/MeinDaten.json' with { type: 'json' } 
-  import { Link } from 'react-router-dom'
-    export default function HobbiesListe() { 
-        return (
-            <div className='m-4 p-4 '>
-            <h2 className="text-3xl font-bold text-blue-400 mb-4 ">Meine Hobbies</h2>
-           
+import MeinDaten from '../data/MeinDaten.json' with { type: 'json' }
+import { useState } from 'react'
+
+
+export default function HobbiesListe() {
+    const [hobby, setHobby] = useState(null);
+    return (
+        <div className=' m-4 p-4 '>
+            <h2 className="text-3xl font-bold text-blue-400 mb-10">Meine Hobbies</h2>
+           <div className="flex flex-col md:flex-row md:items-start md:gap-60">
             <ul>
                 {MeinDaten.hobbies.map((hobby, index) => {
-
-                 
-                  return<li key={index}>
-                        <Link to={hobby} className="text-white hover:underline">
-                            {hobby}
-                        </Link>
+                    return <li key={index}>
+                        <button onClick={() => setHobby(hobby)} className="text-white hover:underline">
+                            {hobby.name}
+                        </button>
                     </li>
-                   
-    })}
+                })}
             </ul>
-             </div>
-        )
-      
-    }           
+
+            {hobby !== null &&
+                (
+                    <img src={hobby.bild} alt={hobby.name} className="mt-4 rounded-lg shadow-lg w-100 h-100 object-cover" />
+                )
+            }
+            </div>
+        </div>
+    );
+
+}           

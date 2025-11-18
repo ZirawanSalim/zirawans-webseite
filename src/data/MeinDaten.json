@@ -91,9 +91,24 @@
         }
     ],
     "hobbies": [
-        "Armband knüpfen",
-        "Fußball",
-        "Musik"
+        {
+            "name": "Armband knüpfen",
+            "slug": "armband-knuepfen",
+            "beschreibung": "Ich liebe es, Armbänder zu knüpfen und dabei meiner Kreativität freien Lauf zu lassen. Es ist für mich eine entspannende Tätigkeit, bei der ich schöne Muster und Designs erschaffen kann.",
+            "bild": "/src/assets/Armband2.jpg"
+        },
+        {
+            "name": "Fußball",
+            "slug": "fussball",
+            "beschreibung": "Fußball ist meine Leidenschaft. Ich spiele regelmäßig in einer Mannschaft und verfolge die Spiele meiner Lieblingsvereine. Es ist ein großartiger Sport, der Teamgeist und Ausdauer fördert.",
+            "bild": "/src/assets/fussball.jpg"
+        },
+        {
+            "name": "Musik",
+            "slug": "musik",
+            "beschreibung": "Musik begleitet mich durch den Alltag.",
+            "bild": "/src/assets/musik.jpg"
+        }
     ],
     "armband_bilder": [
         "/src/assets/armband7.jpg",
