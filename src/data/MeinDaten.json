@@ -46,7 +46,7 @@
                 "JavaScript",
                 "Figma"
             ],
-            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "URL": "https://zirawan.framer.website/?editSite",
             "bild": "/src/assets/armband7.jpg",
             "bild1": "/src/assets/armband1.jpg",
             "bild2": "/src/assets/armband2.jpg",
@@ -60,7 +60,7 @@
                 "Web Design",
                 "UI/UX Design"
             ],
-            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "URL": "https://zirawan.framer.website/?editSite",
             "bild": "/src/assets/framer.png"
         },
         {
@@ -73,7 +73,7 @@
                 "Wireframing",
                 "Prototyping"
             ],
-            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "URL": "https://www.figma.com/design/DSKmgxtET8lkmucFTSjRMV/Batch_001_Block_3_Zirawan_UX_Design_and_Produktentwicklung_c7c361b348?node-id=2003-74&t=kfigc6rpzvRQlpqZ-1",
             "bild": "/src/assets/armband7.jpg"
         },
         {
@@ -86,7 +86,7 @@
                 "JavaScript",
                 "GitHub"
             ],
-            "portfolio_URL": "https://zirawan.framer.website/?editSite",
+            "URL": "https://zirawan.framer.website/?editSite",
             "bild": "/src/assets/armband7.jpg"
         }
     ],
