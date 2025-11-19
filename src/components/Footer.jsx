@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-blue-600 text-white py-10 mt-20 ">
@@ -39,8 +41,7 @@ export default function Footer() {
               <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5Zm-.02 6.5H7v11H4.96v-11ZM9 10h2v1.6h.03c.28-.53 1.03-1.1 2.12-1.1 2.26 0 2.85 1.48 2.85 3.4V21h-2v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.36-2 2.75V21H9V10Z" />
             </svg>
           </a>
-          <a
-            href="Zirawan@hotmail"
+          <Link to= "/contact"
             className="hover:text-gray-300 transition"
           >
             <svg
@@ -51,9 +52,24 @@ export default function Footer() {
             >
               <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.01l-10 6L2 4.01V4Zm0 3.236V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7.236l-10 6-10-6Z"/>
             </svg>
+          </Link>
+          <a 
+            href="https://www.behance.net/gallery/229919983/Case-Study-UIUX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-300 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 4 24 24"
+              className="w-15 h-15"
+            >
+              <path d="M7.2 10.4c.95 0 1.7-.77 1.7-1.72 0-.96-.75-1.73-1.7-1.73H4v3.45h3.2Zm.1 1.53H4v4.32h3.3c1.18 0 2.1-.97 2.1-2.16 0-1.2-.92-2.16-2.1-2.16ZM12.8 6.95h4.9v1.02h-4.9V6.95Zm5.4 6.14c-.07-.9-.63-1.76-1.96-1.76-1.28 0-2.04.82-2.13 1.76h4.09Zm-4.12 1.14c.1 1.14.92 1.71 1.94 1.71.77 0 1.43-.39 1.74-.94h1.43c-.5 1.6-1.86 2.53-3.17 2.53-2.34 0-3.94-1.64-3.94-4s1.6-4 3.94-4c2.6 0 3.9 2.03 3.9 4.24v.46h-5.84Z" />
+            </svg>
           </a>
         </div>
-        <p className="text-gray-600 text-sm">
+         <p className="text-gray-600 text-sm">
         </p>
       </div>
     </footer>

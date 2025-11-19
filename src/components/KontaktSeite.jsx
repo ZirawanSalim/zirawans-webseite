@@ -1,7 +1,8 @@
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function Kontakt() {
+  const topRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,13 +15,16 @@ export default function Kontakt() {
   };
 
   const handleSubmit = (e) => {
+  
     e.preventDefault();
     alert(`Danke, ${formData.name}! Deine Nachricht wurde gesendet.`);
     setFormData({ name: "", email: "", nachricht: "" });
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-6">
+    <div className="min-h-screen bg-black flex items-center justify-center p-6"
+    ref={topRef}
+    >
       <div className="bg-gray-900 rounded-2xl shadow-xl p-8 w-full max-w-lg">
         <h2 className="text-3xl font-bold text-blue-400 mb-6 text-center">
           Kontaktiere mich
@@ -81,6 +85,11 @@ export default function Kontakt() {
           </a>
         </p>
       </div>
+      <button
+        onClick={() => topRef.current.scrollIntoView({ behavior: "smooth" })}
+        className="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+        ↑
+      </button>
     </div>
   );
 }
