@@ -2,17 +2,14 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import contactSchema from "../schemas/contactSchema.js"; 
+import contactSchema from "../schemas/contactSchema.js";
 
 export default function Kontakt() {
   const topRef = useRef(null);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(contactSchema), 
+  const { register, handleSubmit, formState: { errors }, } = useForm({
+    mode: "all",
+    resolver: yupResolver(contactSchema),
   });
 
   const onSubmit = (data) => {
@@ -30,7 +27,7 @@ export default function Kontakt() {
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          
+
           <div>
             <label className="block text-gray-300 font-medium mb-1">Name</label>
             <input
@@ -68,10 +65,7 @@ export default function Kontakt() {
             )}
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white font-semibold py-2 rounded-xl hover:bg-blue-600 transition"
-          >
+          <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 rounded-xl hover:bg-blue-600 transition" >
             Nachricht senden
           </button>
         </form>
@@ -86,10 +80,8 @@ export default function Kontakt() {
           </a>
         </p>
       </div>
-      <button
-        onClick={() => topRef.current.scrollIntoView({ behavior: "smooth" })}
-        className="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
-      >
+      <button onClick={() => topRef.current.scrollIntoView({ behavior: "smooth" })}
+        className="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition" >
         ↑
       </button>
     </div>
