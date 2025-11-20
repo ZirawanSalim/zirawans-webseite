@@ -4,7 +4,7 @@ import NavBar from './components/NavBar.jsx';
 import Home from './Pages/Home.jsx';
 import Contact from './Pages/Contact.jsx';
 import Projekte from './Pages/Projekte.jsx';
-import SigninForm from './components/signinForm.jsx';
+import SigninForm from './Übungen/signinForm.jsx';
 import Footer from './components/Footer.jsx';
 
 
