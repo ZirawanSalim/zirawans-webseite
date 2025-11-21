@@ -47,10 +47,10 @@
                 "Figma"
             ],
             "URL": "https://zirawan.framer.website/?editSite",
-            "bild": "/src/assets/armband7.jpg",
-            "bild1": "/src/assets/armband1.jpg",
-            "bild2": "/src/assets/armband2.jpg",
-            "bild3": "/src/assets/armband3.jpg"
+            "bild": "/src/assets/Armband7.jpg",
+            "bild1": "/src/assets/Armband1.jpg",
+            "bild2": "/src/assets/Armband2.jpg",
+            "bild3": "/src/assets/Armband3.jpg"
         },
         {
             "titel": "Framer Portfolio",
@@ -74,7 +74,7 @@
                 "Prototyping"
             ],
             "URL": "https://www.figma.com/design/DSKmgxtET8lkmucFTSjRMV/Batch_001_Block_3_Zirawan_UX_Design_and_Produktentwicklung_c7c361b348?node-id=2003-74&t=kfigc6rpzvRQlpqZ-1",
-            "bild": "/src/assets/armband7.jpg"
+            "bild": "/src/assets/Armband7.jpg"
         },
         {
             "titel": "Web Grundlagen Abschlussprojekt",
@@ -87,7 +87,7 @@
                 "GitHub"
             ],
             "URL": "https://zirawan.framer.website/?editSite",
-            "bild": "/src/assets/armband7.jpg"
+            "bild": "/src/assets/Armband7.jpg"
         }
     ],
     "hobbies": [
@@ -111,9 +111,9 @@
         }
     ],
     "armband_bilder": [
-        "/src/assets/armband7.jpg",
-        "/src/assets/armband1.jpg",
-        "/src/assets/armband2.jpg",
-        "/src/assets/armband3.jpg"
+        "/src/assets/Armband7.jpg",
+        "/src/assets/Armband1.jpg",
+        "/src/assets/Armband2.jpg",
+        "/src/assets/Armband3.jpg"
     ]
 }
