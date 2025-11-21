@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import MeinDaten from '../data/MeinDaten.json' with { type: 'json' };
-import armband7 from '../assets/Armband7.jpg';
-import armband1 from '../assets/Armband1.jpg';
-import armband2 from '../assets/Armband2.jpg';
+import Armband7 from '../assets/Armband7.jpg';
+import Armband1 from '../assets/Armband1.jpg';
+import Armband2 from '../assets/Armband2.jpg';
 import framer from '../assets/framer.png';
 
 export default function MeinProjekte() {
@@ -10,11 +10,11 @@ export default function MeinProjekte() {
     const [search, setSearch] = useState("");
 
     const getBild = (bildPfad) => {
-        if (bildPfad.includes('Armband7.jpg')) return armband7;
-        if (bildPfad.includes('Armband1.jpg')) return armband1;
-        if (bildPfad.includes('Armband2.jpg')) return armband2;
+        if (bildPfad.includes('Armband7.jpg')) return Armband7;
+        if (bildPfad.includes('Armband1.jpg')) return Armband1;
+        if (bildPfad.includes('Armband2.jpg')) return Armband2;
         if (bildPfad.includes('framer.png')) return framer;
-        return armband1; 
+        return Armband1; 
     };
 
     const getObjectFit = (bildPfad) => {
