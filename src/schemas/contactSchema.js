@@ -3,7 +3,9 @@ import * as yup from "yup";
 
 
 export default yup.object({
-  name: yup.string().required("Bitte gib deinen Namen ein"),
+  name: yup
+    .string().required("Bitte gib deinen Namen ein")
+    .min(2, "Der Name muss mindestens 2 Zeichen lang sein"),
   email: yup
     .string()
     .required("Bitte gib eine Email ein")

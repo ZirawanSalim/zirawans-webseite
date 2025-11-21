@@ -7,7 +7,7 @@ import contactSchema from "../schemas/contactSchema.js";
 export default function Kontakt() {
   const topRef = useRef(null);
 
-  const { register, handleSubmit, formState: { errors }, } = useForm({
+  const { register, handleSubmit, formState: { errors, isValid }, } = useForm({
     mode: "all",
     resolver: yupResolver(contactSchema),
   });
@@ -58,14 +58,14 @@ export default function Kontakt() {
               {...register("nachricht")}
               rows="4"
               className="w-full border border-gray-700 bg-gray-800 text-white rounded-xl p-2 focus:ring-2 focus:ring-blue-400 outline-none"
-              placeholder="Deine Nachricht..."
-            ></textarea>
+              placeholder="Deine Nachricht...">
+            </textarea>
             {errors.nachricht && (
               <p className="text-red-500 text-sm">{errors.nachricht.message}</p>
             )}
           </div>
-
-          <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 rounded-xl hover:bg-blue-600 transition" >
+          <button type="submit"  disabled={!isValid} className={`w-full font-semibold py-2 rounded-xl transition 
+    ${isValid ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-600 text-gray-300 cursor-not-allowed"}`} >
             Nachricht senden
           </button>
         </form>
