@@ -14,7 +14,7 @@ export default function MeinProjekte() {
         if (bildPfad.includes('Armband1.jpg')) return Armband1;
         if (bildPfad.includes('Armband2.jpg')) return Armband2;
         if (bildPfad.includes('framer.png')) return framer;
-        return Armband1; 
+        return ; 
     };
 
     const getObjectFit = (bildPfad) => {

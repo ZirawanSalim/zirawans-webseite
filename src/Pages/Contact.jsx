@@ -2,9 +2,9 @@
 
 
 import { Link } from 'react-router-dom'
-import Kontakt from '../components/KontaktSeite.jsx';
+import Kontakt from '../components/Kontakt.jsx';
 
-export default function ContactPage() {
+export default function Contact() {
     return (
         <>
            

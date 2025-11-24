@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import ThemeContext from "../contexts/ThemeContext";
+
 
 export default function Footer() {
+  const { theme } = useContext(ThemeContext);
+  const footerStyle = theme === "light" ? "bg-blue-600 text-white": "bg-gray-900 text-gray-200 border-t-2 border-blue-500 ";
   return (
-    <footer className="bg-blue-600 text-white py-10 mt-20 ">
+    <footer className={`${footerStyle} py-10 mt-20} py-10 mt-20 `}>
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-xl font-semibold mb-3">
           © {new Date().getFullYear()} Zirawan Salim
