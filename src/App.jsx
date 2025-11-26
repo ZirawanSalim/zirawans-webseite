@@ -8,6 +8,7 @@ import SigninForm from './Übungen/signinForm.jsx';
 import Footer from './components/Footer.jsx';
 import Context from './Pages/Contexts.jsx';
 import ThemeProvider from './contexts/ThemeProvider.jsx';
+import GitHubPage from './Pages/GitHubPage.jsx';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/Projekte" element={<Projekte />} />
         <Route path="/SigninForm" element={<SigninForm />} />
       <Route path='/Contexts' element={<Context/>} /> 
+       <Route path="/github" element={<GitHubPage />} /> 
     
       </Routes>
       <Footer />  

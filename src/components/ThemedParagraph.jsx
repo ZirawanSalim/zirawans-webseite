@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ThemeContext from "../contexts/ThemeContext";
 
 export default function ThemedParagraph() {
-    const theme = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     const paragraphStyle = {
         backgroundColor: theme === "light" ? "#ffffff" : "#333333",
@@ -11,7 +11,7 @@ export default function ThemedParagraph() {
         borderRadius: "5px",
         marginTop: "10px"
     };
-    
+
     return (
         <p style={paragraphStyle}>
             This is a {theme} themed paragraph.

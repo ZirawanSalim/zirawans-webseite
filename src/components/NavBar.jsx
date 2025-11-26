@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import ThemeContext from "../contexts/ThemeContext";
 
+
 export default function NavBar() {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -51,6 +52,9 @@ export default function NavBar() {
 
                     <Link to="/contact" >
                         <div className="border-t border-blue-400 my-2">Contact</div>
+                    </Link>
+                     <Link to="/github" >
+                        <div className="border-t border-blue-400 my-2">GitHub</div>
                     </Link>
 
 
