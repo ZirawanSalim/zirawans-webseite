@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchGitHubProjects } from "../../api/apiGitHub";
+import { fetchGitHubProjects } from "../../API/apiGitHub";
 
 export default function GitHubProjects({ username, sortBy }) {
   const [repositories, setRepositories] = useState([]);
