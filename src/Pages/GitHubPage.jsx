@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GitHubProjects from "../components/GitHub/GitHubProjects";
+import GitHubProjects from "../components/github/GitHubProjects";
 
 export default function GitHubPage() {
   const [sortBy, setSortBy] = useState("name");
