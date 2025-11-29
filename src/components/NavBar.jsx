@@ -25,11 +25,17 @@ export default function NavBar() {
                     <Link to="/contact" >
                         <div className="text-white text-lg hover:text-gray-300">Contact</div>
                     </Link>
+
+                    <Link to="/github" >
+                        <div className="text-white text-lg hover:text-gray-300">GitHub</div>
+                    </Link>
+                     
                 </div>
                 <div className="hidden md:block">
                     <button onClick={toggleTheme} className="text-white text-2xl ml-4" >
                         {theme === "light" ? "🌙" : "☀️"}
                     </button>
+                     
                 </div>
 
                 <button
