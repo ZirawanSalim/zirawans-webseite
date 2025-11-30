@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import MeinDaten from '../data/MeinDaten.json' with { type: 'json' };
-import Armband7 from '../assets/Armband7.jpg';
-import Armband1 from '../assets/Armband1.jpg';
-import Armband2 from '../assets/Armband2.jpg';
-import framer from '../assets/framer.png';
+import Armband7 from './assets/Armband7.jpg';
+import Armband1 from './assets/Armband1.jpg';
+import Armband2 from './assets/Armband2.jpg';
+import framer from './assets/framer.png';
 
 export default function MeinProjekte() {
 
