@@ -17,18 +17,7 @@ export default function GitHubPage() {
       <select
         value={sortBy}
         onChange={(e) => setSortBy(e.target.value)}
-        className="
-          mb-6 p-2 
-          bg-white dark:bg-gray-800  
-          border border-gray-300 dark:border-gray-700
-          text-gray-900 dark:text-gray-200
-          rounded-lg 
-          shadow-sm 
-          focus:outline-none 
-          focus:ring-2 
-          focus:ring-blue-500 
-          hover:border-blue-400
-        "
+        className="mb-6 p-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-400"
       >
         <option value="name">Name</option>
         <option value="updated_at">Zuletzt aktualisiert</option>
