@@ -24,11 +24,6 @@ export default function MeinZertifikat() {
             <h2 className="text-3xl font-bold text-blue-400 mb-10 text-center">
                 Meine Zertifikate
             </h2>
-
-            {/* ───────────────────────────────────────────
-                TITEL in einer Reihe (Desktop & Tablet)
-                Untereinander in Mobile
-            ─────────────────────────────────────────── */}
             <div className="flex flex-col md:flex-row justify-center gap-6 mb-8">
                 {zertifikate.map((zert, index) => (
                     <button
@@ -42,10 +37,6 @@ export default function MeinZertifikat() {
                     </button>
                 ))}
             </div>
-
-            {/* ───────────────────────────────────────────
-                AKTIVES Zertifikat anzeigen
-            ─────────────────────────────────────────── */}
             {activeTitel && (
                 <Zertifikate
                     titel={activeTitel}
