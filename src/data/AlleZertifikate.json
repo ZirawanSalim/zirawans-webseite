@@ -1,0 +1,14 @@
+[
+  {
+    "titel": "Zertifikat Design",
+    "bilder": ["modul1"]
+  },
+  {
+    "titel": "Zertifikat Software- und Webentwicklung",
+    "bilder": ["modul2"]
+  },
+  {
+    "titel": "Zertifikat IHK (2 Seiten)",
+    "bilder": ["ihkS1", "ihkS2"]
+  }
+]
