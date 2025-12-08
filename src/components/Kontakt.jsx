@@ -17,7 +17,7 @@ export default function Kontakt() {
     alert(`Danke, ${data.name}! Deine Nachricht wurde gesendet.`);
   };
 
-  // 🎨 Dynamische Styles abhängig vom Theme
+
   const cardStyle =
     theme === "light"
       ? "bg-black text-white"
