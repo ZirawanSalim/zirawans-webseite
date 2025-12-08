@@ -1,27 +1,26 @@
-import { useContext, useRef } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import contactSchema from "../schemas/contactSchema.js";
+import { useContext, useReducer, useRef } from "react";
 import ThemeContext from "../contexts/ThemeContext";
+import contactReducer, { initialState } from "../reducers/contactReducer";
 
 export default function Kontakt() {
   const topRef = useRef(null);
   const { theme } = useContext(ThemeContext);
 
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({
-    mode: "all",
-    resolver: yupResolver(contactSchema),
-  });
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
-  const onSubmit = (data) => {
-    alert(`Danke, ${data.name}! Deine Nachricht wurde gesendet.`);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "validate" });
+
+    if (state.isValid) {
+      alert(`Danke, ${state.name}! Deine Nachricht wurde gesendet.`);
+      dispatch({ type: "reset" });
+    }
   };
 
-
+  // Styling
   const cardStyle =
-    theme === "light"
-      ? "bg-black text-white"
-      : "bg-white text-black";
+    theme === "light" ? "bg-black text-white" : "bg-white text-black";
 
   const inputStyle =
     theme === "light"
@@ -29,9 +28,7 @@ export default function Kontakt() {
       : "border-gray-300 bg-white text-black";
 
   const labelStyle =
-    theme === "light"
-      ? "text-gray-200"
-      : "text-gray-700";
+    theme === "light" ? "text-gray-200" : "text-gray-700";
 
   return (
     <div
@@ -39,36 +36,42 @@ export default function Kontakt() {
       className="min-h-screen flex items-center justify-center p-6"
     >
       <div className={`rounded-2xl shadow-xl p-8 w-full max-w-lg ${cardStyle}`}>
-
+        
         <h2 className="text-3xl font-bold text-blue-400 mb-6 text-center">
           Kontaktiere mich
         </h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* Name */}
+          {/* NAME */}
           <div>
             <label className={`block font-medium mb-1 ${labelStyle}`}>Name</label>
             <input
-              {...register("name")}
-              className={`w-full border rounded-xl p-2 focus:ring-2 focus:ring-blue-400 outline-none ${inputStyle}`}
+              value={state.name}
+              onChange={(e) =>
+                dispatch({ type: "updateName", payload: e.target.value })
+              }
+              className={`w-full border rounded-xl p-2 ${inputStyle}`}
               placeholder="Dein Name"
             />
-            {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name.message}</p>
+            {state.errors.name && (
+              <p className="text-red-500 text-sm">{state.errors.name}</p>
             )}
           </div>
 
-          {/* Email */}
+          {/* EMAIL */}
           <div>
             <label className={`block font-medium mb-1 ${labelStyle}`}>E-Mail</label>
             <input
-              {...register("email")}
-              className={`w-full border rounded-xl p-2 focus:ring-2 focus:ring-blue-400 outline-none ${inputStyle}`}
+              value={state.email}
+              onChange={(e) =>
+                dispatch({ type: "updateEmail", payload: e.target.value })
+              }
+              className={`w-full border rounded-xl p-2 ${inputStyle}`}
               placeholder="deine@email.de"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            {state.errors.email && (
+              <p className="text-red-500 text-sm">{state.errors.email}</p>
             )}
           </div>
 
@@ -76,22 +79,27 @@ export default function Kontakt() {
           <div>
             <label className={`block font-medium mb-1 ${labelStyle}`}>Nachricht</label>
             <textarea
-              {...register("nachricht")}
               rows="4"
-              className={`w-full border rounded-xl p-2 focus:ring-2 focus:ring-blue-400 outline-none ${inputStyle}`}
+              value={state.nachricht}
+              onChange={(e) =>
+                dispatch({ type: "updateNachricht", payload: e.target.value })
+              }
+              className={`w-full border rounded-xl p-2 ${inputStyle}`}
               placeholder="Deine Nachricht..."
             ></textarea>
-            {errors.nachricht && (
-              <p className="text-red-500 text-sm">{errors.nachricht.message}</p>
+
+            {state.errors.nachricht && (
+              <p className="text-red-500 text-sm">{state.errors.nachricht}</p>
             )}
           </div>
 
-          {/* Button */}
           <button
             type="submit"
-            disabled={!isValid}
             className={`w-full font-semibold py-2 rounded-xl transition 
-              ${isValid ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-600 text-gray-300 cursor-not-allowed"}`}
+            ${state.isValid
+                ? "bg-blue-500 hover:bg-blue-600"
+                : "bg-gray-600 cursor-not-allowed"
+              } text-white`}
           >
             Nachricht senden
           </button>
@@ -99,16 +107,12 @@ export default function Kontakt() {
 
         <p className="text-center text-sm mt-6">
           Du kannst mich auch direkt per E-Mail erreichen:{" "}
-          <a
-            href="mailto:Zirawan@hotmail.com"
-            className="text-blue-400 hover:underline"
-          >
+          <a href="mailto:Zirawan@hotmail.com" className="text-blue-400 hover:underline">
             Zirawan@hotmail.com
           </a>
         </p>
       </div>
 
-      {/* Scroll to top button */}
       <button
         onClick={() => topRef.current.scrollIntoView({ behavior: "smooth" })}
         className="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
@@ -118,8 +122,3 @@ export default function Kontakt() {
     </div>
   );
 }
-
-
-
-
-
