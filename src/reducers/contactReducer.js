@@ -1,3 +1,5 @@
+import contactSchema from "../schemas/contactSchema";
+
 export const initialState = {
   name: "",
   email: "",
@@ -12,45 +14,57 @@ export const initialState = {
 
 export default function contactReducer(state, action) {
   switch (action.type) {
-
     case "updateName":
-      return {
-        ...state,
-        name: action.payload,
-      };
-
     case "updateEmail":
-      return {
+    case "updateNachricht": {
+      const updatedState = {
         ...state,
-        email: action.payload,
+        [action.field]: action.payload,
       };
 
-    case "updateNachricht":
-      return {
-        ...state,
-        nachricht: action.payload,
-      };
-
-    case "validate": {
-      const errors = {
-        name: state.name.length < 2 ? "Mindestens 2 Zeichen" : "",
-        email: !state.email.includes("@") ? "@ muss enthalten sein" : "",
-        nachricht: state.nachricht.length < 5 ? "Mindestens 5 Zeichen" : "",
-      };
-
-      const isValid = !errors.name && !errors.email && !errors.nachricht;
-
-      return {
-        ...state,
-        errors,
-        isValid,
-      };
+      // Validieren nach der Änderung
+      return validateWithSchema(updatedState);
     }
+
+    case "validate":
+      return validateWithSchema(state);
 
     case "reset":
       return initialState;
 
     default:
       return state;
+  }
+}
+
+// 👉 Hilfsfunktion für Validierung mit Yup
+function validateWithSchema(state) {
+  try {
+    contactSchema.validateSync(
+      {
+        name: state.name,
+        email: state.email,
+        nachricht: state.nachricht,
+      },
+      { abortEarly: false }
+    );
+
+    return {
+      ...state,
+      errors: { name: "", email: "", nachricht: "" },
+      isValid: true,
+    };
+  } catch (err) {
+    const errors = { name: "", email: "", nachricht: "" };
+
+    err.inner.forEach((error) => {
+      errors[error.path] = error.message;
+    });
+
+    return {
+      ...state,
+      errors,
+      isValid: false,
+    };
   }
 }

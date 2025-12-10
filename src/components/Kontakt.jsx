@@ -1,22 +1,27 @@
 import { useContext, useReducer, useRef } from "react";
 import ThemeContext from "../contexts/ThemeContext";
 import contactReducer, { initialState } from "../reducers/contactReducer";
+import Snackbar from "./Snackbar";
+import { useState } from "react";
+
 
 export default function Kontakt() {
   const topRef = useRef(null);
   const { theme } = useContext(ThemeContext);
+const [showSuccess, setShowSuccess] = useState(false);
+ const [state, dispatch] = useReducer(contactReducer, initialState);
+const handleSubmit = (e) => {
+  e.preventDefault();
+  dispatch({ type: "validate" });
 
-  const [state, dispatch] = useReducer(contactReducer, initialState);
+  if (state.isValid) {
+    setShowSuccess(true);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch({ type: "validate" });
+    setTimeout(() => setShowSuccess(false), 5000);
 
-    if (state.isValid) {
-      alert(`Danke, ${state.name}! Deine Nachricht wurde gesendet.`);
-      dispatch({ type: "reset" });
-    }
-  };
+    dispatch({ type: "reset" });
+  }
+};
 
   // Styling
   const cardStyle =
@@ -36,7 +41,7 @@ export default function Kontakt() {
       className="min-h-screen flex items-center justify-center p-6"
     >
       <div className={`rounded-2xl shadow-xl p-8 w-full max-w-lg ${cardStyle}`}>
-        
+
         <h2 className="text-3xl font-bold text-blue-400 mb-6 text-center">
           Kontaktiere mich
         </h2>
@@ -49,8 +54,9 @@ export default function Kontakt() {
             <input
               value={state.name}
               onChange={(e) =>
-                dispatch({ type: "updateName", payload: e.target.value })
+                dispatch({ type: "updateName", payload: e.target.value, field: "name" })
               }
+
               className={`w-full border rounded-xl p-2 ${inputStyle}`}
               placeholder="Dein Name"
             />
@@ -65,8 +71,9 @@ export default function Kontakt() {
             <input
               value={state.email}
               onChange={(e) =>
-                dispatch({ type: "updateEmail", payload: e.target.value })
+                dispatch({ type: "updateEmail", payload: e.target.value, field: "email" })
               }
+
               className={`w-full border rounded-xl p-2 ${inputStyle}`}
               placeholder="deine@email.de"
             />
@@ -82,8 +89,9 @@ export default function Kontakt() {
               rows="4"
               value={state.nachricht}
               onChange={(e) =>
-                dispatch({ type: "updateNachricht", payload: e.target.value })
+                dispatch({ type: "updateNachricht", payload: e.target.value, field: "nachricht" })
               }
+
               className={`w-full border rounded-xl p-2 ${inputStyle}`}
               placeholder="Deine Nachricht..."
             ></textarea>
@@ -119,6 +127,14 @@ export default function Kontakt() {
       >
         ↑
       </button>
+
+      {showSuccess && (
+  <Snackbar
+    message={`Danke, ${state.name}! Deine Nachricht wurde gesendet.`}
+    onClose={() => setShowSuccess(false)}
+  />
+)}
+
     </div>
   );
 }

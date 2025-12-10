@@ -4,16 +4,17 @@ import { useImmerReducer } from "use-immer";
 import themeReducer, { initialThemeState } from "./themeReducer.js";
 
 export default function ThemeProvider({ children }) {
-  const [state, dispatch] = useImmerReducer(themeReducer, initialThemeState);
-
-  // Lade Theme einmal aus localStorage
-  useEffect(() => {
+  const [state, dispatch] = useImmerReducer(
+  themeReducer,
+  initialThemeState,
+  () => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark" || savedTheme === "light") {
-      dispatch({ type: "setThemeFromStorage", payload: savedTheme });
-    }
-  }, []);
-
+    return {
+      ...initialThemeState,
+      theme: savedTheme === "dark" ? "dark" : "light",
+    };
+  }
+);
   // Speichere Theme bei jeder Änderung im localStorage
   useEffect(() => {
     localStorage.setItem("theme", state.theme);
