@@ -1,14 +1,19 @@
-import photo from '../assets/Mein foto.JPEG';
+import { useState } from "react";
 
-export default function ProfileImage() {
-    return (
-        <>
-        
-        <img src={photo} className="w-50 rounded-2xl  my-4 m-auto hover:shadow-2xl shadow-blue-400/50" alt="profil foto" />
-       
-        </>
-        
-     
-);
+export default function PortfolioImage({ src, alt, className, onLoadCallback }) {
+  const [loaded, setLoaded] = useState(false);
+
+  function handleLoad() {
+    setLoaded(true);
+    onLoadCallback(); // <-- HOC informieren!
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={`${className} ${loaded ? "opacity-100" : "opacity-0"}`}
+      onLoad={handleLoad}
+    />
+  );
 }
-
