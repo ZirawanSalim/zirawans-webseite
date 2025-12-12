@@ -1,7 +1,7 @@
 import { useImmerReducer } from "use-immer";
 import MeinDaten from "../data/MeinDaten.json" with { type: "json" };
 import armband7 from "../assets/armband7.jpg";
-import armband1 from "../assets/armband1.jpg";
+import armband1 from "/armband1.jpg";
 import armband2 from "../assets/armband2.jpg";
 import framer from "../assets/framer.png";
 
@@ -14,7 +14,7 @@ export default function MeinProjekte() {
   const getBild = (bildPfad) => {
     if (bildPfad.includes("armband7.jpg")) return armband7;
     if (bildPfad.includes("armband1.jpg")) return armband1;
-    if (bildPfad.includes("armband2.jpg")) return armband2;
+    if (bildPfad.includes("rmband2.jpg")) return armband2;
     if (bildPfad.includes("framer.png")) return framer;
     return;
   };

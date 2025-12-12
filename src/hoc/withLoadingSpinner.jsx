@@ -9,7 +9,7 @@ export default function withLoadingSpinner(Component) {
         
         <Component 
           {...props}
-          onLoadCallback={() => setIsLoaded(true)} // <-- Empfangen
+          onLoadCallback={() => setIsLoaded(true)} 
         />
 
         {!isLoaded && (
