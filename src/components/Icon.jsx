@@ -1,4 +1,4 @@
-import Framer from '../assets/framer.png';
+import Framer from '/framer.png';
 
 export default function Icon() {
     return (
