@@ -6,17 +6,14 @@ export default function Hero() {
   return (
     <div className="border p-6 rounded-2xl shadow-blue-900 shadow-lg  m-auto bg-blue-900/5 border-blue-500 backdrop-blur-md">
       <section className="flex flex-col-reverse md:flex-row items-center md:items-start justify-center gap-3 mt-6">
-        
-        <Selbstbeschreibung /> 
 
+        <Selbstbeschreibung />
         <PortfolioImageWithSpinner
           src={photo}
-          alt="Profilbild"
-          className="w-40 rounded-2xl m-auto hover:shadow-2xl shadow-blue-400/50"
+          alt="Profilbild" className="w-70 sm:w-52 md:w-400 lg:w-600 xl:w-200 object-cover rounded-2xl m-auto hover:shadow-2xl shadow-blue-400/50"
         />
 
       </section>
     </div>
   );
 }
-

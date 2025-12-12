@@ -1,8 +1,8 @@
 import { useImmerReducer } from "use-immer";
 import MeinDaten from "../data/MeinDaten.json" with { type: "json" };
-import armband7 from "../assets/Armband7.jpg";
-import armband1 from "../assets/Armband1.jpg";
-import armband2 from "../assets/Armband2.jpg";
+import armband7 from "../assets/armband7.jpg";
+import armband1 from "../assets/armband1.jpg";
+import armband2 from "../assets/armband2.jpg";
 import framer from "../assets/framer.png";
 
 import searchReducer, { initialSearchState } from "../reducers/searchReducer";
@@ -12,9 +12,9 @@ export default function MeinProjekte() {
   const [state, dispatch] = useImmerReducer(searchReducer, initialSearchState);
 
   const getBild = (bildPfad) => {
-    if (bildPfad.includes("Armband7.jpg")) return armband7;
-    if (bildPfad.includes("Armband1.jpg")) return armband1;
-    if (bildPfad.includes("Armband2.jpg")) return armband2;
+    if (bildPfad.includes("armband7.jpg")) return armband7;
+    if (bildPfad.includes("armband1.jpg")) return armband1;
+    if (bildPfad.includes("armband2.jpg")) return armband2;
     if (bildPfad.includes("framer.png")) return framer;
     return;
   };
