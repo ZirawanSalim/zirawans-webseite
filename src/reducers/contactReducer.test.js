@@ -1,19 +1,23 @@
 import contactReducer, { initialState } from "./contactReducer";
-import * as contactSchemaModule from "../schemas/contactSchema"; // Import des Moduls
+import contactSchema from "../schemas/contactSchema";
 
-
-const mockContactSchema = {
-    validateSync: jest.fn(),
-};
-
-
-jest.spyOn(contactSchemaModule, 'default', 'get').mockReturnValue(mockContactSchema);
-
-
+jest.mock("../schemas/contactSchema", () => ({
+    __esModule: true,
+    default: {
+        validateSync: jest.fn(),
+    },
+}));
+    
 describe('contactReducer', () => {
 
-    test('soll den initialen Zustand zurückgeben', () => {
+    beforeEach(() => {
+       
+        contactSchema.validateSync.mockImplementation(() => {
+            throw { inner: [] };
+        });
+    });
 
+    test('soll den initialen Zustand zurückgeben', () => {
         const state = contactReducer(undefined, { type: 'validate' });
 
         expect(state.name).toBe('');
@@ -21,7 +25,8 @@ describe('contactReducer', () => {
         expect(state.isValid).toBe(false);
     });
 
-    test('soll den Zustand auf initialState zurücksetzen, wenn die Action "reset" ist', () => {
+
+    test('soll auf initialState zurücksetzen', () => {
         const currentState = {
             ...initialState,
             name: "Hans",
@@ -33,8 +38,8 @@ describe('contactReducer', () => {
         expect(newState).toEqual(initialState);
     });
 
-    test('soll das Feld aktualisieren und isValid auf true setzen, wenn die Validierung erfolgreich ist', () => {
-        mockContactSchema.validateSync.mockReturnValue(true);
+    test('Validierung erfolgreich → isValid = true', () => {
+        contactSchema.validateSync.mockReturnValue(true);
 
         const action = {
             type: "updateName",
@@ -46,11 +51,10 @@ describe('contactReducer', () => {
 
         expect(newState.name).toBe("Max Mustermann");
         expect(newState.isValid).toBe(true);
-
         expect(newState.errors.name).toBe("");
     });
 
-    test('soll das Feld aktualisieren, isValid auf false setzen und Fehler anzeigen, wenn Validierung fehlschlägt', () => {
+    test('Validierung fehlschlägt → Fehler anzeigen', () => {
         const mockError = {
             inner: [
                 { path: 'name', message: 'Der Name ist erforderlich' },
@@ -58,10 +62,9 @@ describe('contactReducer', () => {
             ],
         };
 
-        mockContactSchema.validateSync.mockImplementation(() => {
+        contactSchema.validateSync.mockImplementation(() => {
             throw mockError;
         });
-
 
         const action = {
             type: "updateName",
@@ -71,7 +74,6 @@ describe('contactReducer', () => {
 
         const newState = contactReducer(initialState, action);
 
-
         expect(newState.name).toBe("");
         expect(newState.isValid).toBe(false);
         expect(newState.errors.name).toBe("Der Name ist erforderlich");
@@ -79,17 +81,17 @@ describe('contactReducer', () => {
         expect(newState.errors.nachricht).toBe("");
     });
 
-    test('soll den Zustand validieren und isValid entsprechend setzen (hier: Fehler)', () => {
+    test('validate Action → Fehler setzen', () => {
         const mockError = {
             inner: [{ path: 'email', message: 'E-Mail fehlt' }],
         };
 
-
-        mockContactSchema.validateSync.mockImplementation(() => {
+        contactSchema.validateSync.mockImplementation(() => {
             throw mockError;
         });
 
         const newState = contactReducer(initialState, { type: 'validate' });
+
         expect(newState.isValid).toBe(false);
         expect(newState.errors.email).toBe("E-Mail fehlt");
     });

@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Zertifikate from "./Zertifikate";
 import ThemeContext from "../contexts/ThemeContext";
+import '@testing-library/jest-dom';
 
 describe("Zertifikate Component", () => {
     function renderWithTheme(ui, { theme = "light" } = {}) {
@@ -48,8 +49,6 @@ describe("Zertifikate Component", () => {
             { theme: "dark" }
         );
 
-        // kein direktes Theme-Styling testen, aber sicherstellen,
-        // dass context ohne Fehler genutzt wird
         expect(screen.getByText("Themetest")).toBeInTheDocument();
     });
 });

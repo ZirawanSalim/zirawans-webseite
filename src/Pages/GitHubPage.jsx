@@ -10,7 +10,7 @@ export default function GitHubPage() {
         Meine GitHub Projekte
       </h1>
 
-      <label className="block text-gray-700 dark:text-gray-300 mb-2">
+      <label className="block text-gray-700 dark:text-white mb-2">
         Sortieren nach:
       </label>
 

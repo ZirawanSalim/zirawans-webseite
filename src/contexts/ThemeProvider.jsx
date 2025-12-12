@@ -15,7 +15,7 @@ export default function ThemeProvider({ children }) {
     };
   }
 );
-  // Speichere Theme bei jeder Änderung im localStorage
+ 
   useEffect(() => {
     localStorage.setItem("theme", state.theme);
   }, [state.theme]);
@@ -34,7 +34,7 @@ export default function ThemeProvider({ children }) {
         theme: state.theme,
         toggleTheme,
         resetTheme,
-        history: state.history, // optional abrufbar
+        history: state.history,
       }}
     >
       <div

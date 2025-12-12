@@ -11,8 +11,7 @@ export const initialState = {
   },
   isValid: false,
 };
-
-export default function contactReducer(state, action) {
+export default function contactReducer(state = initialState, action) {
   switch (action.type) {
     case "updateName":
     case "updateEmail":
@@ -21,8 +20,6 @@ export default function contactReducer(state, action) {
         ...state,
         [action.field]: action.payload,
       };
-
-      // Validieren nach der Änderung
       return validateWithSchema(updatedState);
     }
 
@@ -37,7 +34,8 @@ export default function contactReducer(state, action) {
   }
 }
 
-// 👉 Hilfsfunktion für Validierung mit Yup
+
+
 function validateWithSchema(state) {
   try {
     contactSchema.validateSync(
@@ -57,9 +55,10 @@ function validateWithSchema(state) {
   } catch (err) {
     const errors = { name: "", email: "", nachricht: "" };
 
-    err.inner.forEach((error) => {
-      errors[error.path] = error.message;
-    });
+    (err.inner || []).forEach((error) => {
+    errors[error.path] = error.message;
+});
+
 
     return {
       ...state,

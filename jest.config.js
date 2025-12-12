@@ -1,5 +1,6 @@
 // jest.config.js
 
 export default {
-  testEnvironment: "jsdom"
+  testEnvironment: "jsdom",
+  "jest": { "setupFilesAfterEnv": ["./src/setupTests.js"] }
 }

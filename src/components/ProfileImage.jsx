@@ -5,7 +5,7 @@ export default function PortfolioImage({ src, alt, className, onLoadCallback }) 
 
   function handleLoad() {
     setLoaded(true);
-    onLoadCallback(); // <-- HOC informieren!
+    onLoadCallback(); 
   }
 
   return (
