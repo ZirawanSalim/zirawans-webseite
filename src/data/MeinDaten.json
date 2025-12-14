@@ -93,7 +93,7 @@
             "name": "Armband knüpfen",
             "slug": "armband-knuepfen",
             "beschreibung": "Ich liebe es, Armbänder zu knüpfen und dabei meiner Kreativität freien Lauf zu lassen. Es ist für mich eine entspannende Tätigkeit, bei der ich schöne Muster und Designs erschaffen kann.",
-            "bild": "/src/assets/armband3.jpg"
+            "bild": "./armband3.jpg"
         },
         {
             "name": "Fußball",
@@ -109,9 +109,9 @@
         }
     ],
     "armband_bilder": [
-        "/src/assets/armband7.jpg",
-        "/src/assets/armband1.jpg",
-        "/src/assets/armband2.jpg",
-        "/src/assets/armband3.jpg"
+        "./armband7.jpg",
+        "./armband1.jpg",
+        "./armband2.jpg",
+        "./armband3.jpg"
     ]
 }
