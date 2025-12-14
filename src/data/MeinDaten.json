@@ -47,10 +47,8 @@
                 "Figma"
             ],
             "URL": "https://zirawan.framer.website/?editSite",
-            "bild": "/src/assets/armband7.jpg",
-            "bild1": "/src/assets/armband1.jpg",
-            "bild2": "/src/assets/armband2.jpg",
-            "bild3": "/src/assets/armband3.jpg"
+            "bild": "/src/assets/armband1.jpg"
+            
         },
         {
             "titel": "Framer Portfolio",
@@ -87,7 +85,7 @@
                 "GitHub"
             ],
             "URL": "https://zirawan.framer.website/?editSite",
-            "bild": "/src/assets/armband7.jpg"
+            "bild": "/src/assets/armband2.jpg"
         }
     ],
     "hobbies": [
