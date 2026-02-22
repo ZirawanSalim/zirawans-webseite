@@ -4,6 +4,7 @@ import armband7 from "/armband7.jpg";
 import armband1 from "/armband1.jpg";
 import armband2 from "/armband2.jpg";
 import framer from "/framer.png";
+import f1webapp from "/f1-webapp.svg";
 
 import searchReducer, { initialSearchState } from "../reducers/searchReducer";
 
@@ -16,11 +17,12 @@ export default function MeinProjekte() {
     if (bildPfad.includes("armband1.jpg")) return armband1;
     if (bildPfad.includes("armband2.jpg")) return armband2;
     if (bildPfad.includes("framer.png")) return framer;
-    return;
+    if (bildPfad.includes("f1-webapp.svg")) return f1webapp;
+    return bildPfad;
   };
 
   const getObjectFit = (bildPfad) => {
-    if (bildPfad.includes("framer.png")) {
+    if (bildPfad.includes("framer.png") || bildPfad.includes("f1-webapp.svg")) {
       return "object-contain";
     }
     return "object-cover";

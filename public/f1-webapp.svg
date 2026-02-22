@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="F1 WebApp">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#1a2338"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff2b2b"/>
+      <stop offset="100%" stop-color="#d10000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Checkered accent -->
+  <g transform="translate(860 90)">
+    <rect width="32" height="32" fill="#ffffff"/>
+    <rect x="32" width="32" height="32" fill="#000000"/>
+    <rect x="64" width="32" height="32" fill="#ffffff"/>
+    <rect y="32" width="32" height="32" fill="#000000"/>
+    <rect x="32" y="32" width="32" height="32" fill="#ffffff"/>
+    <rect x="64" y="32" width="32" height="32" fill="#000000"/>
+    <rect y="64" width="32" height="32" fill="#ffffff"/>
+    <rect x="32" y="64" width="32" height="32" fill="#000000"/>
+    <rect x="64" y="64" width="32" height="32" fill="#ffffff"/>
+  </g>
+
+  <!-- Stylized F1 mark -->
+  <path d="M180 330h330c38 0 67-10 90-30l95-78c16-13 36-21 58-21h267l-78 63H797c-13 0-24 3-34 10l-94 73c-38 30-82 43-140 43H180z" fill="url(#red)"/>
+  <rect x="180" y="355" width="420" height="47" rx="10" fill="#ffffff"/>
+  <path d="M700 355h160l-116 92H584z" fill="#ffffff"/>
+
+  <text x="182" y="500" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#e8eefc">F1-webApp</text>
+  <text x="182" y="550" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#b5c4e6">Live race data, drivers and standings</text>
+</svg>

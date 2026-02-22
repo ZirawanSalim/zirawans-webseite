@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import GitHubProjects from "../components/github/GitHubProjects";
+import ThemeContext from "../contexts/ThemeContext";
 
 export default function GitHubPage() {
   const [sortBy, setSortBy] = useState("name");
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -10,7 +12,9 @@ export default function GitHubPage() {
         Meine GitHub Projekte
       </h1>
 
-      <label className="block text-gray-700 dark:text-white mb-2">
+      <label
+        className={`block mb-2 ${theme === "light" ? "text-gray-700" : "text-white"}`}
+      >
         Sortieren nach:
       </label>
 

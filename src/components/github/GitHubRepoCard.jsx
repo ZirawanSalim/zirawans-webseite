@@ -1,6 +1,6 @@
 export default function GitHubRepoCard({ name, description, html_url }) {
   return (
-    <div className="p-5 bg-white dark:bg-gray-800 shadow rounded-xl hover:shadow-lg transition">
+    <div className="p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md rounded-xl hover:shadow-xl transition-shadow duration-200">
       <h3 className="text-xl font-bold text-blue-600 dark:text-blue-300">
         {name}
       </h3>

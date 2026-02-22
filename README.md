@@ -14,3 +14,29 @@ The React Compiler is currently not compatible with SWC. See [this issue](https:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Kontaktformular mit EmailJS (kostenlos)
+
+Das Kontaktformular versendet E-Mails jetzt direkt mit EmailJS und braucht kein Firebase Blaze-Upgrade.
+
+### 1) EmailJS vorbereiten
+
+1. Bei EmailJS einen Service erstellen (z. B. Gmail oder Outlook).
+2. Ein Template anlegen.
+3. Public Key kopieren.
+
+### 2) Umgebungsvariablen setzen
+
+`.env.example` nach `.env.local` kopieren und eintragen:
+- `VITE_EMAILJS_SERVICE_ID`
+- `VITE_EMAILJS_TEMPLATE_ID`
+- `VITE_EMAILJS_PUBLIC_KEY`
+
+### 3) Template-Felder in EmailJS
+
+Im Template diese Variablen verwenden:
+- `{{name}}`
+- `{{email}}`
+- `{{nachricht}}`
+
+Hinweis: Der Code sendet zusätzlich kompatible Felder wie `from_name`, `from_email` und `message`.

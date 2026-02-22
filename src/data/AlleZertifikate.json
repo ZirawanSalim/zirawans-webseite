@@ -4,11 +4,23 @@
     "bilder": ["modul1"]
   },
   {
-    "titel": "Zertifikat Software- und Webentwicklung",
+    "titel": "Zertifikat Software und Webentwicklung",
     "bilder": ["modul2"]
   },
   {
-    "titel": "Zertifikat IHK (2 Seiten)",
+    "titel": "Zertifikat Vertiefung Frontend Entwicklung",
+    "bilder": ["modul3"]
+  },
+  {
+    "titel": "Zertifikat Design IHK",
     "bilder": ["ihkS1", "ihkS2"]
+  },
+  {
+    "titel": "Junior Web Developer IHK",
+    "bilder": ["juniorIhk1", "juniorIhk2"]
+  },
+  {
+    "titel": "CV Zirawan Salim",
+    "bilder": ["cvS1", "cvS2"]
   }
 ]

@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import Icon from "./Icon.jsx";
+import { SiExpress, SiFirebase, SiNextdotjs, SiPostgresql } from "react-icons/si";
+import ThemeContext from "../contexts/ThemeContext";
 
 export default function Skills() {
+    const { theme } = useContext(ThemeContext);
+    const monochromeIconColor = theme === "light" ? "text-gray-900" : "text-gray-100";
+
     return (
         <section id="skills" className="p-6 ">
             <div className="max-w-4xl mx-auto">
@@ -60,6 +66,10 @@ export default function Skills() {
                 <i className="devicon-tailwindcss-plain colored"></i>
                 <i className="devicon-vscode-plain colored"></i>
                 <i className="devicon-git-plain colored"></i>
+                <SiFirebase className="text-orange-500" title="Firebase" aria-label="Firebase" />
+                <SiExpress className={monochromeIconColor} title="Express" aria-label="Express" />
+                <SiPostgresql className="text-sky-500" title="PostgreSQL" aria-label="PostgreSQL" />
+                <SiNextdotjs className={monochromeIconColor} title="Next.js" aria-label="Next.js" />
             </div>
             <h2 className="text-2xl font-semibold mt-8 mb-2">Weitere Kenntnisse</h2>
             <ul className="list-disc list-inside mb-6">

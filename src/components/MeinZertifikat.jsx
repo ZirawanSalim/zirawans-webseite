@@ -3,14 +3,29 @@ import ThemeContext from "../contexts/ThemeContext";
 import Zertifikate from "../Pages/Zertifikate";
 import modul1 from "../assets/Modulbescheinigung Modul 1_Zirawan_Salim.jpg";
 import modul2 from "../assets/Modulbescheinigung Modul 2_Zirawan_Salim_Einführung Software- und Webentwicklung.jpg";
+import modul3 from "../assets/Modulbescheinigung Modul 3_Zirawan_Salim_Vertiefung_ Frontend Entwicklung.jpg";
 import ihkS1 from "../assets/IHK Zertifikat S1.jpg";
 import ihkS2 from "../assets/IHK Zertifikat S2.jpg";
+import juniorIhk1 from "../assets/Junior Web Developer IHK 1.jpg";
+import juniorIhk2 from "../assets/Junior Web Developer IHK 2.jpg";
+import cvS1 from "../assets/CV Zirawan Salim S1.jpg";
+import cvS2 from "../assets/CV Zirawan Salim S2.jpg";
 import zertifikateJson from "../data/AlleZertifikate.json";
 
 export default function MeinZertifikat() {
     const { theme } = useContext(ThemeContext);
 
-    const bildMap = { modul1, modul2, ihkS1, ihkS2 };
+    const bildMap = {
+        modul1,
+        modul2,
+        modul3,
+        ihkS1,
+        ihkS2,
+        juniorIhk1,
+        juniorIhk2,
+        cvS1,
+        cvS2,
+    };
 
     const zertifikate = zertifikateJson.map(item => ({
         titel: item.titel,

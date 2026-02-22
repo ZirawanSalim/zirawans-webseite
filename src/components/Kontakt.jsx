@@ -1,27 +1,53 @@
-import { useContext, useReducer, useRef } from "react";
+import { useContext, useReducer, useRef, useState } from "react";
 import ThemeContext from "../contexts/ThemeContext";
 import contactReducer, { initialState } from "../reducers/contactReducer";
 import Snackbar from "./Snackbar";
-import { useState } from "react";
+import { sendContactMessageWithEmailJs } from "../api/sendContactMessageWithEmailJs";
 
 
 export default function Kontakt() {
   const topRef = useRef(null);
   const { theme } = useContext(ThemeContext);
-const [showSuccess, setShowSuccess] = useState(false);
- const [state, dispatch] = useReducer(contactReducer, initialState);
-const handleSubmit = (e) => {
-  e.preventDefault();
-  dispatch({ type: "validate" });
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
-  if (state.isValid) {
-    setShowSuccess(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    setTimeout(() => setShowSuccess(false), 5000);
+    const validatedState = contactReducer(state, { type: "validate" });
+    dispatch({ type: "validate" });
 
-    dispatch({ type: "reset" });
-  }
-};
+    if (!validatedState.isValid) {
+      return;
+    }
+
+    setSubmitError("");
+    setIsSubmitting(true);
+
+    try {
+      await sendContactMessageWithEmailJs({
+        name: validatedState.name,
+        email: validatedState.email,
+        nachricht: validatedState.nachricht,
+      });
+
+      setSnackbarMessage(`Danke, ${validatedState.name}! Deine Nachricht wurde gesendet.`);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 5000);
+      dispatch({ type: "reset" });
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Nachricht konnte nicht gesendet werden. Bitte später erneut versuchen."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // Styling
   const cardStyle =
@@ -70,6 +96,7 @@ const handleSubmit = (e) => {
             <label className={`block font-medium mb-1 ${labelStyle}`}>E-Mail</label>
             <input
               value={state.email}
+              type="email"
               onChange={(e) =>
                 dispatch({ type: "updateEmail", payload: e.target.value, field: "email" })
               }
@@ -103,14 +130,21 @@ const handleSubmit = (e) => {
 
           <button
             type="submit"
+            disabled={isSubmitting}
             className={`w-full font-semibold py-2 rounded-xl transition 
-            ${state.isValid
+            ${isSubmitting
+                ? "bg-gray-600 cursor-not-allowed"
+                : state.isValid
                 ? "bg-blue-500 hover:bg-blue-600"
                 : "bg-gray-600 cursor-not-allowed"
               } text-white`}
           >
-            Nachricht senden
+            {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
           </button>
+
+          {submitError && (
+            <p className="text-red-500 text-sm">{submitError}</p>
+          )}
         </form>
 
         <p className="text-center text-sm mt-6">
@@ -130,7 +164,7 @@ const handleSubmit = (e) => {
 
       {showSuccess && (
   <Snackbar
-    message={`Danke, ${state.name}! Deine Nachricht wurde gesendet.`}
+    message={snackbarMessage}
     onClose={() => setShowSuccess(false)}
   />
 )}
