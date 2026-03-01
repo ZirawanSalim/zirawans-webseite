@@ -8,8 +8,8 @@ import ihkS1 from "../assets/IHK Zertifikat S1.jpg";
 import ihkS2 from "../assets/IHK Zertifikat S2.jpg";
 import juniorIhk1 from "../assets/Junior Web Developer IHK 1.jpg";
 import juniorIhk2 from "../assets/Junior Web Developer IHK 2.jpg";
-import cvS1 from "../assets/CV Zirawan Salim S1.jpg";
-import cvS2 from "../assets/CV Zirawan Salim S2.jpg";
+import cvS1 from "../assets/CV-Zirawan Salim S1.jpg";
+import cvS2 from "../assets/CV-Zirawan Salim S2.jpg";
 import zertifikateJson from "../data/AlleZertifikate.json";
 
 export default function MeinZertifikat() {

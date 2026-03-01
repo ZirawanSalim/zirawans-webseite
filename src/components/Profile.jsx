@@ -5,7 +5,7 @@ import HobbiesListe from '../components/HobbiesListe.jsx';
 
 export default function Profile() {
     return (
-        <div className="p-6 w-full lg:w-3/4 m-auto">
+        <div className="w-full m-auto p-3 sm:p-6 lg:w-3/4">
 
             <TitlrText />
             <Hero />
