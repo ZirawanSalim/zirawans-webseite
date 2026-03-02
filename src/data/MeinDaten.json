@@ -88,7 +88,7 @@
             "bild": "/src/assets/armband2.jpg"
         },
         {
-            "titel": "F1-webApp",
+            "titel": "F- Won",
             "beschreibung": "Interaktive Formel-1 Web-App mit aktuellen Renninformationen und moderner, responsiver Oberfläche.",
             "technologien": [
                 "React",

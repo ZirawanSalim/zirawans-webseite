@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Icon from "./Icon.jsx";
-import { SiExpress, SiFirebase, SiNextdotjs, SiPostgresql } from "react-icons/si";
+import { SiExpress, SiFirebase, SiNextdotjs, SiPostgresql, SiPrisma } from "react-icons/si";
 import ThemeContext from "../contexts/ThemeContext";
 
 export default function Skills() {
@@ -70,6 +70,7 @@ export default function Skills() {
                 <SiExpress className={monochromeIconColor} title="Express" aria-label="Express" />
                 <SiPostgresql className="text-sky-500" title="PostgreSQL" aria-label="PostgreSQL" />
                 <SiNextdotjs className={monochromeIconColor} title="Next.js" aria-label="Next.js" />
+                <SiPrisma className={monochromeIconColor} title="Prisma" aria-label="Prisma" />
             </div>
             <h2 className="text-2xl font-semibold mt-8 mb-2">Weitere Kenntnisse</h2>
             <ul className="list-disc list-inside mb-6">
