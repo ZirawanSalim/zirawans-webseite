@@ -1,11 +1,21 @@
 import MeinDaten from '../data/MeinDaten.json' with { type: 'json' }
 import { useContext, useState } from 'react'
 import ThemeContext from '../contexts/ThemeContext';
+import fussballBild from '../assets/fussball.jpg';
+import musikBild from '../assets/musik.jpg';
 
 
 export default function HobbiesListe() {
     const [hobby, setHobby] = useState(null);
     const { theme } = useContext(ThemeContext);
+    const getHobbyBild = (selectedHobby) => {
+        if (!selectedHobby) return "";
+        if (selectedHobby.slug === "fussball") return fussballBild;
+        if (selectedHobby.slug === "musik") return musikBild;
+        if (selectedHobby.slug === "armband-knuepfen") return "/armband3.jpg";
+        return selectedHobby.bild;
+    };
+
     return (
         <div className=' m-4 p-4 '>
             <h2 className="text-3xl font-bold text-blue-400 mb-10">Meine Hobbies</h2>
@@ -25,7 +35,7 @@ export default function HobbiesListe() {
 
             {hobby !== null &&
                 (
-                    <img src={hobby.bild} alt={hobby.name} className="mt-4 rounded-lg shadow-lg  w-70 h-70  md:w-100 md:h-100  object-cover" />
+                    <img src={getHobbyBild(hobby)} alt={hobby.name} className="mt-4 rounded-lg shadow-lg  w-70 h-70  md:w-100 md:h-100  object-cover" />
                 )
             }
             </div>
