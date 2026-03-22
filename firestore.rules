@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function validEmail(v) {
+      return v is string && v.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+    }
+
+    match /contactMessages/{docId} {
+      allow create: if
+        request.resource.data.keys().hasOnly([
+          'name',
+          'email',
+          'nachricht',
+          'createdAt',
+          'source'
+        ]) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() >= 2 &&
+        request.resource.data.name.size() <= 120 &&
+        validEmail(request.resource.data.email) &&
+        request.resource.data.nachricht is string &&
+        request.resource.data.nachricht.size() >= 5 &&
+        request.resource.data.nachricht.size() <= 4000 &&
+        request.resource.data.source == 'portfolio-contact-form' &&
+        request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+
+    match /mail/{docId} {
+      allow create: if
+        request.resource.data.keys().hasOnly([
+          'to',
+          'replyTo',
+          'message',
+          'createdAt'
+        ]) &&
+        request.resource.data.to is list &&
+        request.resource.data.to.size() == 1 &&
+        request.resource.data.to[0] == 'Zirawan@hotmail.com' &&
+        validEmail(request.resource.data.replyTo) &&
+        request.resource.data.message is map &&
+        request.resource.data.message.keys().hasOnly(['subject', 'text']) &&
+        request.resource.data.message.subject is string &&
+        request.resource.data.message.subject.size() >= 5 &&
+        request.resource.data.message.subject.size() <= 180 &&
+        request.resource.data.message.text is string &&
+        request.resource.data.message.text.size() >= 10 &&
+        request.resource.data.message.text.size() <= 6000 &&
+        request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
