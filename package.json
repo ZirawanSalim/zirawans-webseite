@@ -9,11 +9,14 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
     "deploy:firestore:rules": "npx firebase-tools deploy --only firestore:rules"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@chakra-ui/react": "^3.30.0",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@hookform/resolvers": "^5.2.2",
     "firebase": "^12.9.0",
@@ -33,6 +36,7 @@
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
     "@eslint/js": "^9.36.0",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.1.17",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",

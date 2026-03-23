@@ -40,3 +40,12 @@ Im Template diese Variablen verwenden:
 - `{{nachricht}}`
 
 Hinweis: Der Code sendet zusätzlich kompatible Felder wie `from_name`, `from_email` und `message`.
+
+## E2E Tests mit Playwright
+
+1. Browser installieren:
+   - `npx playwright install chromium`
+2. E2E Tests ausführen:
+   - `npm run test:e2e`
+3. Report anzeigen:
+   - `npm run test:e2e:report`

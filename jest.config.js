@@ -1,6 +1,5 @@
-// jest.config.js
-
 export default {
   testEnvironment: "jsdom",
-  "jest": { "setupFilesAfterEnv": ["./src/setupTests.js"] }
-}
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
+  testPathIgnorePatterns: ["<rootDir>/e2e/", "<rootDir>/node_modules/"],
+};
