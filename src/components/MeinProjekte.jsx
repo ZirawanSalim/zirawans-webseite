@@ -34,13 +34,13 @@ export default function MeinProjekte() {
   );
 
   return (
-    <div className="m-4 p-4">
-      <h2 className="text-3xl font-bold text-blue-400 mb-8 ml-40">
+    <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6">
+      <h2 className="text-3xl font-bold text-blue-400 mb-8">
         Meine Projekte
       </h2>
 
      
-      <div className="ml-40 mb-6 flex gap-4">
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
 
         <input
           type="text"
@@ -52,13 +52,13 @@ export default function MeinProjekte() {
               payload: e.target.value,
             })
           }
-          className="p-2 rounded bg-gray-700 text-white w-80 border border-gray-600"
+          className="p-2 rounded bg-gray-700 text-white w-full sm:w-80 border border-gray-600"
         />
 
         {state.query.length > 0 && (
           <button
             onClick={() => dispatch({ type: "cancelSearch" })}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full sm:w-auto"
           >
             X Löschen
           </button>

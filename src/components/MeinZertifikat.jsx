@@ -39,7 +39,7 @@ export default function MeinZertifikat() {
             <h2 className="text-3xl font-bold text-blue-400 mb-10 text-center">
                 Meine Zertifikate
             </h2>
-            <div className="flex flex-col md:flex-row justify-center gap-6 mb-8">
+            <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 md:gap-6 mb-8">
                 {zertifikate.map((zert, index) => (
                     <button
                         key={index}

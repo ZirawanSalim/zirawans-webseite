@@ -7,8 +7,8 @@ export default function Footer() {
   const { theme } = useContext(ThemeContext);
   const footerStyle = theme === "light" ? "bg-blue-600 text-white": "bg-gray-900 text-gray-200 border-t-2 border-blue-500 ";
   return (
-    <footer className={`${footerStyle} py-10 mt-20} py-10 mt-20 `}>
-      <div className="max-w-4xl mx-auto text-center">
+    <footer className={`${footerStyle} py-10 mt-20`}>
+      <div className="max-w-4xl mx-auto text-center px-4">
         <h2 className="text-xl font-semibold mb-3">
           © {new Date().getFullYear()} Zirawan Salim
         </h2>
@@ -68,7 +68,7 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 4 24 24"
-              className="w-15 h-15"
+              className="w-10 h-10"
             >
               <path d="M7.2 10.4c.95 0 1.7-.77 1.7-1.72 0-.96-.75-1.73-1.7-1.73H4v3.45h3.2Zm.1 1.53H4v4.32h3.3c1.18 0 2.1-.97 2.1-2.16 0-1.2-.92-2.16-2.1-2.16ZM12.8 6.95h4.9v1.02h-4.9V6.95Zm5.4 6.14c-.07-.9-.63-1.76-1.96-1.76-1.28 0-2.04.82-2.13 1.76h4.09Zm-4.12 1.14c.1 1.14.92 1.71 1.94 1.71.77 0 1.43-.39 1.74-.94h1.43c-.5 1.6-1.86 2.53-3.17 2.53-2.34 0-3.94-1.64-3.94-4s1.6-4 3.94-4c2.6 0 3.9 2.03 3.9 4.24v.46h-5.84Z" />
             </svg>

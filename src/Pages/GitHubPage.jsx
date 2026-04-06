@@ -7,7 +7,7 @@ export default function GitHubPage() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-4 sm:p-6">
       <h1 className="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-300">
         Meine GitHub Projekte
       </h1>

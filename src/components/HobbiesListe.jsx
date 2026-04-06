@@ -17,10 +17,10 @@ export default function HobbiesListe() {
     };
 
     return (
-        <div className=' m-4 p-4 '>
+        <div className="m-4 p-4">
             <h2 className="text-3xl font-bold text-blue-400 mb-10">Meine Hobbies</h2>
-           <div className="flex flex-col md:flex-row md:items-start md:gap-60">
-            <ul className='md:w-1/2 space-y-4'>
+           <div className="flex flex-col md:flex-row md:items-start gap-6 lg:gap-16">
+            <ul className="md:w-1/2 space-y-4">
                 {MeinDaten.hobbies.map((hobby, index) => {
                     return <li key={index}>
                         <button
@@ -35,7 +35,11 @@ export default function HobbiesListe() {
 
             {hobby !== null &&
                 (
-                    <img src={getHobbyBild(hobby)} alt={hobby.name} className="mt-4 rounded-lg shadow-lg  w-70 h-70  md:w-100 md:h-100  object-cover" />
+                    <img
+                        src={getHobbyBild(hobby)}
+                        alt={hobby.name}
+                        className="mt-4 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-cover"
+                    />
                 )
             }
             </div>

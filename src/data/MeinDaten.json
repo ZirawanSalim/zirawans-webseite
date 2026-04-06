@@ -46,7 +46,7 @@
                 "JavaScript",
                 "Figma"
             ],
-            "URL": "https://zirawan.framer.website/?editSite",
+            "URL": "https://sanzi-armbaender.vercel.app/",
             "bild": "/src/assets/armband1.jpg"
             
         },
@@ -98,6 +98,18 @@
             ],
             "URL": "https://f1-web-1pxwtgey1-zirawans-projects.vercel.app/",
             "bild": "/f1-webapp.svg"
+        },
+        {
+            "titel": "zirawans-armbaender",
+            "beschreibung": "Moderner Armband-Onlineshop mit Produktansicht, Warenkorb und Authentifizierung.",
+            "technologien": [
+                "React",
+                "Node.js",
+                "PostgreSQL",
+                "Tailwind CSS"
+            ],
+            "URL": "https://sanzi-armbaender.vercel.app/",
+            "bild": "/armband3.jpg"
         }
     ],
     "hobbies": [

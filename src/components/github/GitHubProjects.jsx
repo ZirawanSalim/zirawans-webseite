@@ -26,6 +26,8 @@ export default function GitHubProjects({ username, sortBy }) {
 function buildPortfolioCards(repos, username) {
   const portfolioName = "zirawans-webseite";
   const f1Name = "f1-webapp";
+  const armbandName = "zirawans-armbaender";
+  const legacyBraceletName = "project-bracelet";
   const normalizeName = (value) => value.toLowerCase().replace(/\s+/g, "");
 
   const portfolioRepo = repos.find(
@@ -34,10 +36,16 @@ function buildPortfolioCards(repos, username) {
 
   const reposWithoutPinned = repos.filter((repo) => {
     const normalized = normalizeName(repo.name);
-    return normalized !== portfolioName && normalized !== f1Name;
+    return normalized !== portfolioName
+      && normalized !== f1Name
+      && normalized !== armbandName
+      && normalized !== legacyBraceletName;
   });
 
   const existingF1Repo = repos.find((repo) => normalizeName(repo.name) === f1Name);
+  const existingArmbandRepo = repos.find(
+    (repo) => normalizeName(repo.name) === armbandName
+  );
 
   const cards = [];
 
@@ -45,14 +53,21 @@ function buildPortfolioCards(repos, username) {
     cards.push(portfolioRepo);
   }
 
-  cards.push(...reposWithoutPinned);
+  cards.push(existingArmbandRepo ?? {
+    id: "manual-zirawans-armbaender",
+    name: "zirawans-armbaender",
+    description: "Armband Onlineshop Projekt",
+    html_url: `https://github.com/${username}/zirawans-armbaender`,
+  });
 
-  cards.splice(3, 0, existingF1Repo ?? {
+  cards.push(existingF1Repo ?? {
     id: "manual-f1-webapp",
     name: "F1-webApp",
     description: "F1 Web App Projekt",
     html_url: `https://github.com/${username}/F1-webApp`,
   });
+
+  cards.push(...reposWithoutPinned);
 
   return cards;
 }
