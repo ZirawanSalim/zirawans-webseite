@@ -1,14 +1,14 @@
 [
   {
-    "titel": "Zertifikat Design",
+    "titel": "Modulbeschreibung Design",
     "bilder": ["modul1"]
   },
   {
-    "titel": "Zertifikat Software und Webentwicklung",
+    "titel": "Modulbeschreibung Software und Webentwicklung",
     "bilder": ["modul2"]
   },
   {
-    "titel": "Zertifikat Vertiefung Frontend Entwicklung",
+    "titel": "Modulbeschreibung Vertiefung Frontend Entwicklung",
     "bilder": ["modul3"]
   },
   {
