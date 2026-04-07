@@ -16,16 +16,17 @@ export default function App() {
     <>
       <ThemeProvider>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Projekte" element={<Projekte />} />
-          <Route path="/SigninForm" element={<SigninForm />} />
-          <Route path='/Contexts' element={<Context />} />
-         <Route path="/zertifikate" element={<MeinZertifikat />} />
-          <Route path="/github" element={<GitHubPage />} />
-
-        </Routes>
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Projekte" element={<Projekte />} />
+            <Route path="/SigninForm" element={<SigninForm />} />
+            <Route path='/Contexts' element={<Context />} />
+            <Route path="/zertifikate" element={<MeinZertifikat />} />
+            <Route path="/github" element={<GitHubPage />} />
+          </Routes>
+        </main>
         <Footer />
       </ThemeProvider>
 
