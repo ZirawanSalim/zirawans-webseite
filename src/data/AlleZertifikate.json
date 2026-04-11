@@ -12,6 +12,14 @@
     "bilder": ["modul3"]
   },
   {
+    "titel": "Modulbescheinigung M4",
+    "bilder": ["modul4"]
+  },
+  {
+    "titel": "Syntaxzertifikat",
+    "bilder": ["syntaxZertifikat"]
+  },
+  {
     "titel": "Zertifikat Design IHK",
     "bilder": ["ihkS1", "ihkS2"]
   },
