@@ -11,7 +11,9 @@ export default function NavBar() {
     return (
         <nav className={theme === "light" ? "bg-blue-600 p-4" : "bg-gray-800 p-4"}>
             <div className="flex justify-between items-center xl:h-12 ml-4 mr-4">
-                <div className="hover:scale-105 text-white font-bold text-xl">Zirawan Salim</div>
+                <Link to="/" aria-label="Zur Startseite">
+                    <div className="hover:scale-105 text-white font-bold text-xl">Zirawan Salim</div>
+                </Link>
 
                 <div className="hidden xl:flex flex-1 justify-center space-x-6">
                     <Link to="/" >
