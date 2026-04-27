@@ -11,6 +11,10 @@ import ihkS1 from "../assets/IHK Zertifikat S1.jpg";
 import ihkS2 from "../assets/IHK Zertifikat S2.jpg";
 import juniorIhk1 from "../assets/Junior Web Developer IHK 1.jpg";
 import juniorIhk2 from "../assets/Junior Web Developer IHK 2.jpg";
+import webDevelopmentSpecialistIhk1 from "../assets/WEB DEVELOPMENT SPECIALIST IHK1.jpg";
+import webDevelopmentSpecialistIhk2 from "../assets/WEB DEVELOPMENT SPECIALIST IHK2.jpg";
+import itFachkraftWebDevelopmentIhk1 from "../assets/Zertifikat IT-FACHKRAFT FÜR WEB DEVELOPMENT IHK1.jpg";
+import itFachkraftWebDevelopmentIhk2 from "../assets/Zertifikat IT-FACHKRAFT FÜR WEB DEVELOPMENT IHK2.jpg";
 import cvS1 from "../assets/CV-Zirawan Salim S1.jpg";
 import cvS2 from "../assets/CV-zirawan Salim S2.jpg";
 import zertifikateJson from "../data/AlleZertifikate.json";
@@ -29,6 +33,10 @@ export default function MeinZertifikat() {
         ihkS2,
         juniorIhk1,
         juniorIhk2,
+        webDevelopmentSpecialistIhk1,
+        webDevelopmentSpecialistIhk2,
+        itFachkraftWebDevelopmentIhk1,
+        itFachkraftWebDevelopmentIhk2,
         cvS1,
         cvS2,
     };

@@ -28,6 +28,14 @@
     "bilder": ["juniorIhk1", "juniorIhk2"]
   },
   {
+    "titel": "Web Development Specialist IHK",
+    "bilder": ["webDevelopmentSpecialistIhk1", "webDevelopmentSpecialistIhk2"]
+  },
+  {
+    "titel": "IT-Fachkraft für Web Development IHK",
+    "bilder": ["itFachkraftWebDevelopmentIhk1", "itFachkraftWebDevelopmentIhk2"]
+  },
+  {
     "titel": "CV Zirawan Salim",
     "bilder": ["cvS1", "cvS2"]
   }
