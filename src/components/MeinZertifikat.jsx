@@ -5,7 +5,8 @@ import modul1 from "../assets/Modulbescheinigung Modul 1_Zirawan_Salim.jpg";
 import modul2 from "../assets/Modulbescheinigung Modul 2_Zirawan_Salim_Einführung Software- und Webentwicklung.jpg";
 import modul3 from "../assets/Modulbescheinigung Modul 3_Zirawan_Salim_Vertiefung_ Frontend Entwicklung.jpg";
 import modul4 from "../assets/Modulbescheinigung M4_Zirawan_Salim_Spezialisierung & Arbeitsmarktvorbereitung.jpg";
-import syntaxZertifikat from "../assets/Syntaxzertifikat_Zirawan_Salim -1.jpg";
+import zertifikatZirawan1 from "../assets/Zertifikat_Zirawan Salim 1.jpg";
+import zertifikatZirawan2 from "../assets/Zertifikat_Zirawan Salim 2.jpg";
 import ihkS1 from "../assets/IHK Zertifikat S1.jpg";
 import ihkS2 from "../assets/IHK Zertifikat S2.jpg";
 import juniorIhk1 from "../assets/Junior Web Developer IHK 1.jpg";
@@ -22,7 +23,8 @@ export default function MeinZertifikat() {
         modul2,
         modul3,
         modul4,
-        syntaxZertifikat,
+        zertifikatZirawan1,
+        zertifikatZirawan2,
         ihkS1,
         ihkS2,
         juniorIhk1,
